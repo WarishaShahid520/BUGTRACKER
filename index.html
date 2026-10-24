@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BugTrack – Software Issue Tracking System</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<aside class="side">
+  <div class="logo">🐞 <span>BugTrack</span></div>
+  <nav id="nav">
+    <button data-v="dashboard" class="on">📊 Dashboard</button>
+    <button data-v="issues">🗂 Issues</button>
+    <button data-v="testing">🧪 Testing</button>
+    <button data-v="analytics">📈 Analytics</button>
+    <button data-v="docs">📘 SE Docs</button>
+  </nav>
+  <button id="theme" class="ghost">🌓 Toggle theme</button>
+</aside>
+<main>
+  <header class="top"><h1 id="title"></h1><button class="btn" id="new">+ New Issue</button></header>
+  <section id="view"></section>
+</main>
+<div class="modal" id="modal">
+  <form id="form" class="glass">
+    <h2 id="ftitle">New Issue</h2>
+    <div class="grid">
+      <label>Issue ID<input id="f_id" readonly></label>
+      <label>Date Created<input id="f_created" readonly></label>
+      <label class="w2">Issue Title *<input id="f_title" required maxlength="120"></label>
+      <label class="w2">Description<textarea id="f_desc" rows="2"></textarea></label>
+      <label>Reporter Name *<input id="f_reporter" required></label>
+      <label>Module Name *<input id="f_module" required></label>
+      <label class="w2">Reproduction Steps<textarea id="f_steps" rows="3"></textarea></label>
+      <label>Expected Result<textarea id="f_expected" rows="2"></textarea></label>
+      <label>Actual Result<textarea id="f_actual" rows="2"></textarea></label>
+      <label>Severity<select id="f_sev"></select></label>
+      <label>Priority<select id="f_pri"></select></label>
+      <label class="w2">Status<select id="f_st"></select></label>
+    </div>
+    <div class="acts"><button type="button" class="ghost" id="cancel">Cancel</button><button class="btn">Save Issue</button></div>
+  </form>
+</div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
